@@ -25,7 +25,7 @@ const Template = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
           />
         </div>
         <div className="w-11/12 max-w-[450px] mx-0 text-white">
-          <div className="bg-[#e2fff1] flex text-xl justify-center rounded-full max-w-md mx-auto mb-4">
+        <div className="bg-[#e2fff1] flex text-xl justify-center rounded-full max-w-md mx-auto mb-4">
             <Link
               to="/login"
               className={`${
@@ -54,6 +54,7 @@ const Template = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
             <LoginForm setIsLoggedIn={setIsLoggedIn} />
           )}
         </div>
+
       </div>
       <Footer />
     </div>
