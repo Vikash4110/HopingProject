@@ -85,9 +85,6 @@ const LoginForm = ({ setIsLoggedIn }) => {
           <img src={linkedin} alt="LinkedIn" className="w-6 h-6"/>
         </button>
       </div>
-      <br/>
-      <br/>
-      <br/>
     </form>
   );
 };

@@ -13,24 +13,24 @@ const Template = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex-grow flex w-11/12 max-w-[1160px] py-12 mx-auto gap-y-0 gap-x-12 justify-between">
-        <div className="relative w-11/12 max-w-[450px]">
+      <div className="flex-grow flex flex-col-reverse lg:flex-row w-full max-w-[1160px] py-12 mx-auto justify-between">
+        <div className="w-full lg:w-1/2 flex justify-center items-center">
           <img
             src={image}
             alt="pattern"
-            width={558}
-            height={504}
+            width={500}
+            height={350}
             loading="lazy"
-            className="absolute -top-4 right-4"
+            className="max-w-full h-auto"
           />
         </div>
-        <div className="w-11/12 max-w-[450px] mx-0 text-white">
-        <div className="bg-[#e2fff1] flex text-xl justify-center rounded-full max-w-md mx-auto mb-4">
+        <div className="w-full lg:w-1/2 px-6 lg:px-0 text-white mt-10">
+          <div className="bg-[#e2fff1] flex text-xl justify-center rounded-full max-w-md mx-auto mb-4">
             <Link
               to="/login"
               className={`${
                 activeButton === "login" ? "bg-[#1DBF73] text-white" : "bg-[#e2fff1] text-black"
-              } rounded-full flex-1 py-2 mx-2  text-center`}
+              } rounded-full flex-1 py-2 mx-2 text-center`}
               style={{ fontSize: "0.9rem" }}
               onClick={() => handleButtonClick("login")}
             >
@@ -48,13 +48,12 @@ const Template = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
             </Link>
           </div>
 
-          {formType === "signup" ? (
+          {activeButton === "signup" ? (
             <SignupForm setIsLoggedIn={setIsLoggedIn} />
           ) : (
             <LoginForm setIsLoggedIn={setIsLoggedIn} />
           )}
         </div>
-
       </div>
       <Footer />
     </div>
